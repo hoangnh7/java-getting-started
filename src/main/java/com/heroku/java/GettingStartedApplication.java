@@ -59,8 +59,8 @@ public class GettingStartedApplication {
     }
     @GetMapping("/download")
     public ResponseEntity<byte[]> downloadFile() throws IOException {
-//    Candidate candidate = new Candidate();
-//    candidate.setName("Nguyễn Huy Hoàng");
+    Candidate candidate = new Candidate();
+    candidate.setName("Nguyễn Huy Hoàng");
 
     String strTemplate = "Rikkeisoft_Skill_Sheet_Template_ja.xlsx";
     File currDir = new File(".");
@@ -68,8 +68,8 @@ public class GettingStartedApplication {
     path = path.substring(0,path.length()-2);
     File filePath = new File(path + File.separator + "/target/classes/templates"  + File.separator + strTemplate);
         if (filePath.isFile()) {
-            byte[] fileOut = Files.readAllBytes(filePath.toPath());
-//            byte[] fileOut = ExcelHelper.excelExport(candidate, new FileInputStream(filePath), "EN");
+//            byte[] fileOut = Files.readAllBytes(filePath.toPath());
+            byte[] fileOut = ExcelHelper.excelExport(candidate, new FileInputStream(filePath), "EN");
             HttpHeaders headers = new HttpHeaders();
             String fileName = "abc.xlssx";
             headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
