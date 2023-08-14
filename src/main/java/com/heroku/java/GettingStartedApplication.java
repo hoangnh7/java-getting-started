@@ -63,7 +63,7 @@ public class GettingStartedApplication {
     File currDir = new File(".");
     String path = currDir.getAbsolutePath();
     path = path.substring(0,path.length()-2);
-    File filePath = new File(path + File.separator + "/src/main/resources/templates"  + File.separator + strTemplate);
+    File filePath = new File(path + File.separator + "/target/classes/templates"  + File.separator + strTemplate);
         if (filePath.isFile()) {
             byte[] fileOut =    Files.readAllBytes(filePath.toPath());
             HttpHeaders headers = new HttpHeaders();
