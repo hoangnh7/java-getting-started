@@ -71,7 +71,7 @@ public class GettingStartedApplication {
 //            byte[] fileOut = Files.readAllBytes(filePath.toPath());
             byte[] fileOut = ExcelHelper.excelExport(candidate, new FileInputStream(filePath), "EN");
             HttpHeaders headers = new HttpHeaders();
-            String fileName = "abc.xlsx";
+            String fileName = "abcd.xlsx";
             headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
             headers.setContentDispositionFormData( fileName, fileName);
             return new ResponseEntity<>(fileOut, headers, HttpStatus.OK);
