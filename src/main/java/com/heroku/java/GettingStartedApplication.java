@@ -66,7 +66,7 @@ public class GettingStartedApplication {
     File currDir = new File(".");
     String path = currDir.getAbsolutePath();
     path = path.substring(0,path.length()-2);
-    File filePath = new File(path + File.separator + "/target/classes/templates"  + File.separator + strTemplate);
+        File filePath = new File(path + File.separator + PathHelper.RESOURCE_DIR  + File.separator + strTemplate);
         if (filePath.isFile()) {
 //            byte[] fileOut = Files.readAllBytes(filePath.toPath());
             byte[] fileOut = ExcelHelper.excelExport(candidate, new FileInputStream(filePath), "EN");
